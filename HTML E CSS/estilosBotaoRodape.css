@@ -1,0 +1,18 @@
+.caixaBotao {
+	width:100%;
+	margin:auto;
+	float:left;
+	margin-top:10px;
+}
+.botaoRodape {
+	width:200px;
+	height:30px;
+	border:solid 3px #ff6a00;
+	text-align:center;
+	background:#ff6a00;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color:#ffffff;
+	margin:auto;
+	margin-bottom:20px;
+}
+

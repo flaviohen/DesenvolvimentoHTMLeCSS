@@ -1,0 +1,64 @@
+.tamanhoCaixa {
+	width: 24%;
+	float: left;
+	margin-left: 5px;
+	margin-top:10px;
+}
+.caixaProduto {
+	width: 100%;
+	float: left;
+}
+
+.retanguloTopo {
+	width:70%;
+	border:solid 1px #7cd4fe;
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color:#ffffff;
+	background:#7cd4fe;
+	height:100%;
+	text-align:center;
+	margin:auto;
+
+}
+
+.retanguloProduto {
+	width:100%;
+	border:solid 2px #7cd4fe;
+	border-radius:3%;
+	height:100%;
+	font-size:10px;
+	margin:auto;
+	
+}
+
+.ciruculoDentroProduto {
+	border:solid 2px #ff0000;
+	border-radius:50%;
+	width:80%;
+	height:150px;
+	margin:auto;
+	margin-top:10px;
+
+}
+
+.retanguloDentroProduto {
+	width: 70%;
+	height: 250px;
+	margin: auto;
+	border: solid 2px;
+	margin-bottom: 10px;
+	word-wrap: break-word;
+	text-align: justify;
+	padding-left: 2px;
+}
+
+.caixaOctogno {
+	width:100%;
+}
+
+.octogono {
+	width: 70px;
+	height: 70px;
+	background-color: #4cff00;
+	clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+	margin: auto;
