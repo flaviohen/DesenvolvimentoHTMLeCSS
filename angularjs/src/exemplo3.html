@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="aluguelCarro">
+   <head>
+     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+     <title>Angular JS - Exemplo 2 - Aluguel de carros</title>
+     <script src="angular-1.8.2/angular.min.js"></script>
+     <script src="bootstrap/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+     <script src="https://kit.fontawesome.com/101c6f82b6.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="bootstrap/node_modules/bootstrap/dist/css/bootstrap.min.css">
+     
+     <script>
+        var alugarCarro = angular.module("aluguelCarro",[]);
+        alugarCarro.controller("alugarCarroCtrl", function($scope) {
+        $scope.carros = [
+            { marca:"Chevrolet", modelo:"Onix", cor:"Preta", anoModelo:2018, combustivel: "Flex"},
+            { marca:"Chevrolet", modelo:"Blazer", cor:"Prata", anoModelo:2016, combustivel: "Diesel"},
+            { marca:"Ford", modelo:"Fiesta Hatch", cor:"Branca", anoModelo:2016, combustivel: "Flex"},
+            { marca:"Fiat", modelo:"Argo", cor:"Cinza", anoModelo:2018, combustivel: "Flex"},
+            { marca:"Honda", modelo:"City", cor:"Preta", anoModelo:2017, combustivel: "Flex"},
+            { marca:"Toyota", modelo:"Corolla", cor:"Cinza", anoModelo:2016, combustivel: "Flex"},
+            { marca:"Toyota", modelo:"Picape Hilux", cor:"Prata", anoModelo:2017, combustivel: "Diesel"}
+        ]
+
+        $scope.marcas = ["Chevrolet", "Ford","Fiat","Honda","Toyota"]
+        $scope.modelos = ["Onix","Blazer","Fiesta Hatch","Argo","City","Corolla","Picape Hilux"]
+        $scope.cores = ["Preto","Prata","Branco","Cinza","Vermelho"]
+        $scope.combustiveis = ["Flex","Alcool","Gasolina","Diesel","Eletrico"]    
+
+        $scope.adicionarCarros = function(carro){
+            $scope.carros.push(carro);
+            delete $scope.carro;
+        }
+    });
+     </script>
+
+   </head>
+   <body ng-controller="alugarCarroCtrl">
+    <div class="navbar">
+     <div class="container">
+      <h3>Aluguel de Carros</h3>
+    </div>
+    
+    </div>
+      <table class="table">
+        <tr>
+            <th>Marca</th>
+            <th>Modelo</th>
+            <th>Cor</th>
+            <th>Ano Modelo</th>
+            <th>Combustivel</th>
+        </tr>
+        <tr ng-repeat="carro in carros">
+             <td>{{carro.marca}}</td>
+             <td>{{carro.modelo}}</td>
+             <td>{{carro.cor}}</td>
+             <td>{{carro.anoModelo}}</td>
+             <td>{{carro.combustivel}}</td>   
+        </tr>
+      </table>
+      <hr/>
+    <div class="container">
+      <div class="mb3">
+        <label class="form-label">Selecione a Marca:</label>
+        <select ng-model="carro.marca" class="form-select" ng-options="marca for marca in marcas"></select>
+      </div>
+      <div class="mb3">
+        <label class="form-label">Selecione o Modelo:</label>
+        <select ng-model="carro.modelo" class="form-select" ng-options="modelo for modelo in modelos"></select>
+      </div>
+      <div class="mb3">
+        <label class="form-label">Selecione a Cor:</label>
+        <select ng-model="carro.cor" class="form-control" ng-options="cor for cor in cores"></select>
+      </div>
+      <div class="mb3">
+        <label class="form-label">Ano Modelo:</label>
+        <input type="text" class="form-control" ng-model="carro.anoModelo">
+      </div>
+      <div class="mb3">
+        <label class="form-label">Selecione o Combustivel:</label>
+        <select ng-model="carro.combustivel" class="form-select" ng-options="combustivel for combustivel in combustiveis"></select>
+      </div>   
+      <br/>
+      <button type="button" class="btn btn-primary" ng-click="adicionarCarros(carro)"><i class="fas fa-plus"></i> Adicionar</button>
+    </div>
+    </body>
+</html>
